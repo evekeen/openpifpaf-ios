@@ -6,3 +6,4 @@ Pods/
 *.pt
 *.mlmodel
 
+.DS_Store

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */; };
+		56B1FD942BACC3DB00FBE51D /* openpifpaf.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */; };
+		56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */; };
+		56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */; };
 		B53A194F255DB733004C5B20 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A194E255DB733004C5B20 /* PoseView.swift */; };
 		B53A1954255DB799004C5B20 /* PoseAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A1953255DB799004C5B20 /* PoseAnnotation.swift */; };
 		B5B4E5F625446B5E00B7BA85 /* openpifpafiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E5F525446B5E00B7BA85 /* openpifpafiosApp.swift */; };
@@ -16,7 +20,6 @@
 		B5B4E60825446B5F00B7BA85 /* openpifpafiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E60725446B5F00B7BA85 /* openpifpafiosTests.swift */; };
 		B5B4E61325446B5F00B7BA85 /* openpifpafiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E61225446B5F00B7BA85 /* openpifpafiosUITests.swift */; };
 		B5B4E6522544DC0000B7BA85 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E6512544DC0000B7BA85 /* CameraViewController.swift */; };
-		B5D2BF68255F20B800536A74 /* fused9test.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B5D2BF67255F20B800536A74 /* fused9test.mlmodel */; };
 		B5D2BF6D255FFDB000536A74 /* PosePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2BF6C255FFDB000536A74 /* PosePredictor.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadMetas.swift; sourceTree = "<group>"; };
+		56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = openpifpaf.mlmodel; sourceTree = "<group>"; };
+		56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pillow-2.jpg"; sourceTree = "<group>"; };
+		56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = shufflenet.mlmodel; sourceTree = "<group>"; };
 		B53A194E255DB733004C5B20 /* PoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseView.swift; sourceTree = "<group>"; };
 		B53A1953255DB799004C5B20 /* PoseAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnnotation.swift; sourceTree = "<group>"; };
 		B5B4E5F225446B5E00B7BA85 /* openpifpafios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openpifpafios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +60,6 @@
 		B5B4E61225446B5F00B7BA85 /* openpifpafiosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = openpifpafiosUITests.swift; sourceTree = "<group>"; };
 		B5B4E61425446B5F00B7BA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5B4E6512544DC0000B7BA85 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		B5D2BF67255F20B800536A74 /* fused9test.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = fused9test.mlmodel; sourceTree = "<group>"; };
 		B5D2BF6C255FFDB000536A74 /* PosePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosePredictor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		563AE91D2BB1D09600D6C76F /* CifCaf */ = {
+			isa = PBXGroup;
+			children = (
+				563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */,
+			);
+			path = CifCaf;
+			sourceTree = "<group>";
+		};
 		B5B4E5E925446B5E00B7BA85 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +119,13 @@
 		B5B4E5F425446B5E00B7BA85 /* openpifpafios */ = {
 			isa = PBXGroup;
 			children = (
+				563AE91D2BB1D09600D6C76F /* CifCaf */,
+				56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */,
+				56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */,
+				56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */,
 				B5B4E5F525446B5E00B7BA85 /* openpifpafiosApp.swift */,
 				B5B4E5F725446B5E00B7BA85 /* ContentView.swift */,
 				B53A194E255DB733004C5B20 /* PoseView.swift */,
-				B5D2BF67255F20B800536A74 /* fused9test.mlmodel */,
 				B53A1953255DB799004C5B20 /* PoseAnnotation.swift */,
 				B5B4E6512544DC0000B7BA85 /* CameraViewController.swift */,
 				B5D2BF6C255FFDB000536A74 /* PosePredictor.swift */,
@@ -248,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */,
 				B5B4E5FD25446B5E00B7BA85 /* Preview Assets.xcassets in Resources */,
 				B5B4E5FA25446B5E00B7BA85 /* Assets.xcassets in Resources */,
 			);
@@ -274,12 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D2BF68255F20B800536A74 /* fused9test.mlmodel in Sources */,
+				56B1FD942BACC3DB00FBE51D /* openpifpaf.mlmodel in Sources */,
+				563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */,
 				B5D2BF6D255FFDB000536A74 /* PosePredictor.swift in Sources */,
 				B5B4E5F825446B5E00B7BA85 /* ContentView.swift in Sources */,
 				B5B4E5F625446B5E00B7BA85 /* openpifpafiosApp.swift in Sources */,
 				B53A1954255DB799004C5B20 /* PoseAnnotation.swift in Sources */,
 				B5B4E6522544DC0000B7BA85 /* CameraViewController.swift in Sources */,
+				56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */,
 				B53A194F255DB733004C5B20 /* PoseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +459,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"openpifpafios/Preview Content\"";
-				DEVELOPMENT_TEAM = UCRXZ4P49M;
+				DEVELOPMENT_TEAM = QD27A48GSA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = openpifpafios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -461,7 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"openpifpafios/Preview Content\"";
-				DEVELOPMENT_TEAM = UCRXZ4P49M;
+				DEVELOPMENT_TEAM = QD27A48GSA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = openpifpafios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
