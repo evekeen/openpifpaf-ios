@@ -6,7 +6,7 @@ PODS:
   - LibTorch-Lite/Torch (1.9.0)
 
 DEPENDENCIES:
-  - LibTorch-Lite (= 1.9.0)
+  - LibTorch-Lite (<= 2.0.0)
 
 SPEC REPOS:
   trunk:
@@ -15,6 +15,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   LibTorch-Lite: a9e7c3f986af0495d44b27e3fadeda699afed1f0
 
-PODFILE CHECKSUM: 7f86fc29f9c3d306bff00b9e48c6ea96dfc54a3f
+PODFILE CHECKSUM: b202decbae86081a5ac0153026f3be49d1fd62df
 
 COCOAPODS: 1.13.0
