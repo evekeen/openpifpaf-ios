@@ -23,8 +23,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            CameraViewControllerRepresentable(posePredictor: posePredictor, poses: $poses, poseUpdateFPS: $fps)
-                .edgesIgnoringSafeArea(.top)
+//            CameraViewControllerRepresentable(posePredictor: posePredictor, poses: $poses, poseUpdateFPS: $fps)
+//                .edgesIgnoringSafeArea(.top)
+            Image("pillow-2")
             PoseView(poses: $poses)
             VStack {
                 Spacer()
@@ -36,6 +37,14 @@ struct ContentView: View {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                     )
             }
+        }
+        .onAppear {
+            print("onAppear")
+            let image = UIImage(named: "pillow-2")
+            posePredictor.delegate = {
+                poses = $0
+            }
+            posePredictor.predict(image!.cgImage!)
         }
     }
 }

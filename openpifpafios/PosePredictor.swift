@@ -32,8 +32,8 @@ class PredictorInput: MLFeatureProvider {
 }
 
 class PosePredictor {
-    private let model: MLModel = try! fused9test().model
-    private let size = CGSize(width: 353, height: 353)
+    private let model: MLModel = try! shufflenet().model
+    private let size = CGSize(width: 129, height: 97)
     private let stride = 8.0
     var delegate: (([Pose]) -> Void)? = nil
     
@@ -54,6 +54,7 @@ class PosePredictor {
                 }
             }
         }
+        print("shape", cif.shape)
         return Pose(
             keypoints: (0..<cif.shape[1].intValue).map { Keypoint(c: confidences[$0], x: x[$0] * stride, y: y[$0] * stride) },
             skeleton: [[0, 1], [0, 2]]
@@ -61,12 +62,14 @@ class PosePredictor {
     }
     
     func predict(_ image: CGImage) {
+        print("predicting...")
         guard let prediction = try? self.model.prediction(from: PredictorInput(image: image, size: self.size)) else {
             return
         }
 
         let cif = prediction.featureValue(for: "cif_head")!.multiArrayValue
         let pose = self.singlePose(cif!)
+        print(pose)
 
         guard self.delegate != nil else { return }
         self.delegate!([pose])

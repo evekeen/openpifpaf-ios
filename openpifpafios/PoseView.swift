@@ -35,8 +35,13 @@ struct PoseView: View {
     @Binding var poses: [Pose]
     
     var body: some View {
+        let xScale = UIScreen.main.bounds.width
+        let yScale = UIScreen.main.bounds.height
+        
         ZStack {
             ForEach(poses, id: \.id) { pose in
+                let pixelPoints = pose.keypoints.map { Keypoint(c: $0.c, x: $0.x * xScale, y: $0.y * yScale) }
+                let pose = Pose(keypoints: pixelPoints, skeleton: pose.skeleton)
                 Skeleton(pose: pose, cThreshold: cThreshold)
                     .stroke(lineWidth: 5)
                     .foregroundColor(.green)
@@ -58,9 +63,9 @@ struct PoseView_Previews: PreviewProvider {
     static var previews: some View {
         let examplePose = Pose(
             keypoints: [
-                Keypoint(c: 1.0, x: 10, y: 10),
-                Keypoint(c: 1.0, x: 100, y: 10),
-                Keypoint(c: 1.0, x: 50, y: 50)
+                Keypoint(c: 1.0, x: 0.5, y: 0.1),
+                Keypoint(c: 1.0, x: 0.8, y: 0.1),
+                Keypoint(c: 1.0, x: 0.3, y: 0.9)
             ],
             skeleton: [[0, 1], [1, 2]]
         )
