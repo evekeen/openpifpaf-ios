@@ -22,6 +22,8 @@
 		56B1FD942BACC3DB00FBE51D /* openpifpaf.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */; };
 		56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */; };
 		56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */; };
+		56C377672BB31F880029016D /* backbone-optimized.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56C377662BB31F880029016D /* backbone-optimized.ptl */; };
+		56C377692BB320350029016D /* backbone.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56C377682BB320350029016D /* backbone.ptl */; };
 		56D43D492BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */; };
 		56D43D4B2BB2562D00040387 /* test.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56D43D4A2BB2562D00040387 /* test.ptl */; };
 		B53A194F255DB733004C5B20 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A194E255DB733004C5B20 /* PoseView.swift */; };
@@ -83,6 +85,8 @@
 		56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = openpifpaf.mlmodel; sourceTree = "<group>"; };
 		56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pillow-2.jpg"; sourceTree = "<group>"; };
 		56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = shufflenet.mlmodel; sourceTree = "<group>"; };
+		56C377662BB31F880029016D /* backbone-optimized.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "backbone-optimized.ptl"; sourceTree = "<group>"; };
+		56C377682BB320350029016D /* backbone.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = backbone.ptl; sourceTree = "<group>"; };
 		56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; name = "openpifpaf-shufflenetv2k16.torchscript.ptl"; path = "../../openpifpaf/openpifpaf-shufflenetv2k16.torchscript.ptl"; sourceTree = "<group>"; };
 		56D43D4A2BB2562D00040387 /* test.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.ptl; sourceTree = "<group>"; };
 		682ACB0B31F83AC11BDA7985 /* Pods-openpifpafios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openpifpafios.debug.xcconfig"; path = "Target Support Files/Pods-openpifpafios/Pods-openpifpafios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 		B5B4E5F425446B5E00B7BA85 /* openpifpafios */ = {
 			isa = PBXGroup;
 			children = (
+				56C377682BB320350029016D /* backbone.ptl */,
+				56C377662BB31F880029016D /* backbone-optimized.ptl */,
 				56D43D4A2BB2562D00040387 /* test.ptl */,
 				56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */,
 				563AE91D2BB1D09600D6C76F /* CifCaf */,
@@ -362,8 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D43D4B2BB2562D00040387 /* test.ptl in Resources */,
+				56C377672BB31F880029016D /* backbone-optimized.ptl in Resources */,
 				56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */,
 				B5B4E5FD25446B5E00B7BA85 /* Preview Assets.xcassets in Resources */,
+				56C377692BB320350029016D /* backbone.ptl in Resources */,
 				56D43D492BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl in Resources */,
 				B5B4E5FA25446B5E00B7BA85 /* Assets.xcassets in Resources */,
 			);

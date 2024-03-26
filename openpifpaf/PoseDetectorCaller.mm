@@ -52,10 +52,7 @@ Tensor getSkeleton() {
         {132, 133}, {115, 118}, {118, 122}, {122, 126}, {126, 130}
     };
     auto t = torch::from_blob(data.data(), {static_cast<int64_t>(data.size()), 2}, torch::kInt64);
-    auto accessor = t.accessor<int64_t, 2>();
-    for (int i = 0; i < data.size(); i++) {
-        cout << accessor[i][0] << " " << accessor[i][1] << endl;
-    }
+    t = t - 1;
     return t;
 }
 
@@ -140,14 +137,14 @@ NSArray<NSNumber*>* getArray(Tensor tensor) {
         NSLog(@"Running pytorch model...");
         c10::InferenceMode guard;
         auto tuple = _model.forward({input}).toTuple();
-        auto end_time = std::chrono::high_resolution_clock::now();
-        NSLog(@"Inference done in %lld ms", std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count());
+        auto inference_end_time = std::chrono::high_resolution_clock::now();
+        NSLog(@"Inference done in %lld ms", std::chrono::duration_cast<std::chrono::milliseconds>(inference_end_time - start_time).count());
         auto cif_field = tuple->elements()[0].toTensor().squeeze(0);
         cout << "CIF field shape: " << cif_field.sizes() << endl;
         auto caf_field = tuple->elements()[1].toTensor().squeeze(0);
         cout << "CAF field shape: " << caf_field.sizes() << endl;
         auto result = _cifcaf->call(cif_field, cif_stride, caf_field, caf_stride);
-        cout << "CifCaf finished" << endl;
+        NSLog(@"CIFCAF done in %lld ms", std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - inference_end_time).count());
         auto annotation = get<0>(result);
         cout << "Annotation shape: " << annotation.sizes() << endl;
         if (annotation.size(0) == 0) {
