@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562F2F402BB30683006003D0 /* module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F2E2BB30683006003D0 /* module.cpp */; };
+		562F2F412BB30683006003D0 /* cifdet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F302BB30683006003D0 /* cifdet.cpp */; };
+		562F2F422BB30683006003D0 /* cif_hr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F312BB30683006003D0 /* cif_hr.cpp */; };
+		562F2F432BB30683006003D0 /* cif_seeds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F322BB30683006003D0 /* cif_seeds.cpp */; };
+		562F2F442BB30683006003D0 /* cifcaf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F342BB30683006003D0 /* cifcaf.cpp */; };
+		562F2F452BB30683006003D0 /* occupancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F362BB30683006003D0 /* occupancy.cpp */; };
+		562F2F462BB30683006003D0 /* caf_scored.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F3A2BB30683006003D0 /* caf_scored.cpp */; };
+		562F2F472BB30683006003D0 /* nms_keypoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F3C2BB30683006003D0 /* nms_keypoints.cpp */; };
+		562F2F482BB30683006003D0 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 562F2F3E2BB30683006003D0 /* utils.cpp */; };
 		563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */; };
 		563AE9692BB21E5900D6C76F /* PoseDetectorCaller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9682BB21E5900D6C76F /* PoseDetectorCaller.mm */; };
 		563AE96E2BB2401A00D6C76F /* InferredPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 563AE96D2BB2401A00D6C76F /* InferredPose.m */; };
@@ -47,6 +56,24 @@
 
 /* Begin PBXFileReference section */
 		253631C80064929DC4A110AE /* Pods-openpifpafios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openpifpafios.release.xcconfig"; path = "Target Support Files/Pods-openpifpafios/Pods-openpifpafios.release.xcconfig"; sourceTree = "<group>"; };
+		562F2F2E2BB30683006003D0 /* module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = module.cpp; sourceTree = "<group>"; };
+		562F2F2F2BB30683006003D0 /* cif_seeds.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cif_seeds.hpp; sourceTree = "<group>"; };
+		562F2F302BB30683006003D0 /* cifdet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cifdet.cpp; sourceTree = "<group>"; };
+		562F2F312BB30683006003D0 /* cif_hr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cif_hr.cpp; sourceTree = "<group>"; };
+		562F2F322BB30683006003D0 /* cif_seeds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cif_seeds.cpp; sourceTree = "<group>"; };
+		562F2F332BB30683006003D0 /* caf_scored.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = caf_scored.hpp; sourceTree = "<group>"; };
+		562F2F342BB30683006003D0 /* cifcaf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cifcaf.cpp; sourceTree = "<group>"; };
+		562F2F352BB30683006003D0 /* utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
+		562F2F362BB30683006003D0 /* occupancy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = occupancy.cpp; sourceTree = "<group>"; };
+		562F2F372BB30683006003D0 /* nms_keypoints.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nms_keypoints.hpp; sourceTree = "<group>"; };
+		562F2F382BB30683006003D0 /* occupancy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = occupancy.hpp; sourceTree = "<group>"; };
+		562F2F392BB30683006003D0 /* openpifpaf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = openpifpaf.hpp; sourceTree = "<group>"; };
+		562F2F3A2BB30683006003D0 /* caf_scored.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = caf_scored.cpp; sourceTree = "<group>"; };
+		562F2F3B2BB30683006003D0 /* cifcaf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cifcaf.hpp; sourceTree = "<group>"; };
+		562F2F3C2BB30683006003D0 /* nms_keypoints.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nms_keypoints.cpp; sourceTree = "<group>"; };
+		562F2F3D2BB30683006003D0 /* cif_hr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cif_hr.hpp; sourceTree = "<group>"; };
+		562F2F3E2BB30683006003D0 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		562F2F3F2BB30683006003D0 /* cifdet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cifdet.hpp; sourceTree = "<group>"; };
 		563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadMetas.swift; sourceTree = "<group>"; };
 		563AE9662BB21D0900D6C76F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		563AE9672BB21E5900D6C76F /* PoseDetectorCaller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoseDetectorCaller.h; sourceTree = "<group>"; };
@@ -115,6 +142,24 @@
 		563AE9622BB2165700D6C76F /* openpifpaf */ = {
 			isa = PBXGroup;
 			children = (
+				562F2F3A2BB30683006003D0 /* caf_scored.cpp */,
+				562F2F332BB30683006003D0 /* caf_scored.hpp */,
+				562F2F312BB30683006003D0 /* cif_hr.cpp */,
+				562F2F3D2BB30683006003D0 /* cif_hr.hpp */,
+				562F2F322BB30683006003D0 /* cif_seeds.cpp */,
+				562F2F2F2BB30683006003D0 /* cif_seeds.hpp */,
+				562F2F342BB30683006003D0 /* cifcaf.cpp */,
+				562F2F3B2BB30683006003D0 /* cifcaf.hpp */,
+				562F2F302BB30683006003D0 /* cifdet.cpp */,
+				562F2F3F2BB30683006003D0 /* cifdet.hpp */,
+				562F2F2E2BB30683006003D0 /* module.cpp */,
+				562F2F3C2BB30683006003D0 /* nms_keypoints.cpp */,
+				562F2F372BB30683006003D0 /* nms_keypoints.hpp */,
+				562F2F362BB30683006003D0 /* occupancy.cpp */,
+				562F2F382BB30683006003D0 /* occupancy.hpp */,
+				562F2F392BB30683006003D0 /* openpifpaf.hpp */,
+				562F2F3E2BB30683006003D0 /* utils.cpp */,
+				562F2F352BB30683006003D0 /* utils.hpp */,
 				563AE9662BB21D0900D6C76F /* BridgingHeader.h */,
 				563AE9672BB21E5900D6C76F /* PoseDetectorCaller.h */,
 				563AE9682BB21E5900D6C76F /* PoseDetectorCaller.mm */,
@@ -374,13 +419,22 @@
 				563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */,
 				563AE96E2BB2401A00D6C76F /* InferredPose.m in Sources */,
 				B5D2BF6D255FFDB000536A74 /* PosePredictor.swift in Sources */,
+				562F2F472BB30683006003D0 /* nms_keypoints.cpp in Sources */,
+				562F2F412BB30683006003D0 /* cifdet.cpp in Sources */,
 				B5B4E5F825446B5E00B7BA85 /* ContentView.swift in Sources */,
 				B5B4E5F625446B5E00B7BA85 /* openpifpafiosApp.swift in Sources */,
+				562F2F442BB30683006003D0 /* cifcaf.cpp in Sources */,
 				B53A1954255DB799004C5B20 /* PoseAnnotation.swift in Sources */,
+				562F2F422BB30683006003D0 /* cif_hr.cpp in Sources */,
+				562F2F482BB30683006003D0 /* utils.cpp in Sources */,
 				B5B4E6522544DC0000B7BA85 /* CameraViewController.swift in Sources */,
+				562F2F432BB30683006003D0 /* cif_seeds.cpp in Sources */,
+				562F2F462BB30683006003D0 /* caf_scored.cpp in Sources */,
 				563AE9692BB21E5900D6C76F /* PoseDetectorCaller.mm in Sources */,
+				562F2F402BB30683006003D0 /* module.cpp in Sources */,
 				56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */,
 				B53A194F255DB733004C5B20 /* PoseView.swift in Sources */,
+				562F2F452BB30683006003D0 /* occupancy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +600,7 @@
 				DEVELOPMENT_TEAM = QD27A48GSA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = openpifpafios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,7 +624,7 @@
 				DEVELOPMENT_TEAM = QD27A48GSA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = openpifpafios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

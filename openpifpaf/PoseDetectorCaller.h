@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PoseDetectorCaller : NSObject
 
 - (nullable instancetype)initWithModelAt:(NSString*)modelPath;
-- (InferredPose *) infer:(CGImageRef)image;
+- (nullable InferredPose *) infer:(CGImageRef)image;
 
 @end
 

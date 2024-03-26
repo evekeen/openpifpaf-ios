@@ -73,12 +73,12 @@ class PosePredictor {
     
     func predict(_ image: CGImage) {
         print("predicting...")
-        let inferredPose = model.infer(image)
-        let pose = Pose(keypoints: inferredPose.keypoints, skeleton: [[]])
-        print(pose)
-
-        guard self.delegate != nil else { return }
-        self.delegate!([pose])
+        if let inferredPose = model.infer(image) {
+            let pose = Pose(keypoints: inferredPose.keypoints, skeleton: [[]])
+            print(pose)
+            guard self.delegate != nil else { return }
+            self.delegate!([pose])
+        }
     }
 }
 

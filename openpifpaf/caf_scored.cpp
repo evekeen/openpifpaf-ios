@@ -32,6 +32,7 @@ void CafScored::fill(const torch::Tensor& caf_field, int64_t stride, const torch
     auto caf_field_a = caf_field.accessor<float, 4>();
     auto skeleton_a = skeleton.accessor<int64_t, 2>();
     int64_t n_fields = caf_field_a.size(0);
+    std::cout << "n_fields: " << n_fields << "skeleton size: " << skeleton.size(0) << std::endl;
 
     forward.resize(n_fields);
     backward.resize(n_fields);
