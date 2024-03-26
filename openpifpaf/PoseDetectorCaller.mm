@@ -85,13 +85,34 @@ Tensor normalize(Tensor tensor) {
     const float mean[] = {0.485, 0.456, 0.406};
     const float stdV[] = {0.229, 0.224, 0.225};
     for (int i = 0; i < 3; i++) {
-        tensor[0][i] = (tensor[0][i] / 255 - mean[i]) / stdV[i];
+        tensor[i] = (tensor[i] / 255 - mean[i]) / stdV[i];
     }
     return tensor;
 }
 
-Tensor pad16(Tensor tensor) {
-    return torch::constant_pad_nd(tensor, {0, 15, 0, 15}, 0);
+Tensor centerPad(Tensor tensor, double multiple) {
+    auto channelFirst = tensor.permute({2, 0, 1});
+    int h = channelFirst.size(1);
+    int w = channelFirst.size(2);
+
+    int target_width = std::ceil((w - 1) / multiple) * multiple + 1;
+    int target_height = std::ceil((h - 1) / multiple) * multiple + 1;
+    
+    cout << "image " << w << " x " << h << endl;
+    cout << "target " << target_width << " x " << target_height << endl;
+
+    int left = std::max(0, static_cast<int>((target_width - w) / 2.0));
+    int top = std::max(0, static_cast<int>((target_height - h) / 2.0));
+
+    int right = std::max(0, target_width - w - left);
+    int bottom = std::max(0, target_height - h - top);
+    cout << "padding with " << left << " " << top << " " << right << " " << bottom << endl;
+
+    auto channel0 = torch::constant_pad_nd(channelFirst[0], {left, top, right, bottom}, 124);
+    auto channel1 = torch::constant_pad_nd(channelFirst[1], {left, top, right, bottom}, 116);
+    auto channel2 = torch::constant_pad_nd(channelFirst[2], {left, top, right, bottom}, 104);
+    auto padded = torch::stack({channel0, channel1, channel2});
+    return padded;
 }
 
 Tensor tensorFromImage(CGImageRef image) {
@@ -108,19 +129,18 @@ Tensor tensorFromImage(CGImageRef image) {
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), image);
     CGContextRelease(context);
     CGColorSpaceRelease(colorSpace);
-    auto tensor = torch::from_blob(data, {1, static_cast<long long>(height), static_cast<long long>(width), static_cast<long long>(channels)}, at::kByte);
+    auto tensor = torch::from_blob(data, {static_cast<long long>(height), static_cast<long long>(width), static_cast<long long>(channels)}, at::kByte);
     delete[] data;
-    tensor = tensor.permute({0, 3, 1, 2});
     NSLog(@"Loaded tensor from image");
+    tensor = centerPad(tensor, 16);
+    NSLog(@"Padded tensor");
     tensor = normalize(tensor);
     NSLog(@"Normalized tensor");
-    tensor = pad16(tensor);
-    NSLog(@"Padded tensor");
     return tensor.toType(at::kFloat);
 }
 
 - (InferredPose*) infer:(CGImageRef)image {
-    Tensor tensor = tensorFromImage(image);
+    Tensor tensor = tensorFromImage(image).unsqueeze(0);
     return [self doInfer:tensor];
 }
 
@@ -141,6 +161,7 @@ NSArray<NSNumber*>* getArray(Tensor tensor) {
         NSLog(@"Inference done in %lld ms", std::chrono::duration_cast<std::chrono::milliseconds>(inference_end_time - start_time).count());
         auto cif_field = tuple->elements()[0].toTensor().squeeze(0);
         cout << "CIF field shape: " << cif_field.sizes() << endl;
+        cout << "cif field: " << cif_field[0][0] << endl;
         auto caf_field = tuple->elements()[1].toTensor().squeeze(0);
         cout << "CAF field shape: " << caf_field.sizes() << endl;
         auto result = _cifcaf->call(cif_field, cif_stride, caf_field, caf_stride);

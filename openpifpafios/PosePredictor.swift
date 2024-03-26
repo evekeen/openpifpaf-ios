@@ -39,7 +39,7 @@ class PosePredictor {
 
     private lazy var model: PoseDetectorCaller = {
 //        if let filePath = Bundle.main.path(forResource: "openpifpaf-shufflenetv2k16.torchscript", ofType: "ptl") {
-        if let filePath = Bundle.main.path(forResource: "test", ofType: "ptl") {
+        if let filePath = Bundle.main.path(forResource: "backbone", ofType: "ptl") {
             print("loading model from", filePath)
             return PoseDetectorCaller(modelAt: filePath)!
         } else {
