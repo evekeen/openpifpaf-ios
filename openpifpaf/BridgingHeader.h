@@ -8,7 +8,7 @@
 #ifndef BridgingHeader_h
 #define BridgingHeader_h
 
-#import "openpifpaf.h"
+#import "PoseDetectorCaller.h"
 
 
 #endif /* BridgingHeader_h */

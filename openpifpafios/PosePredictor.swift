@@ -35,8 +35,18 @@ class PosePredictor {
 //    private let model: MLModel = try! shufflenet().model
 //    private let size = CGSize(width: 129, height: 97)
 //    private let stride = 8.0
-//    var delegate: (([Pose]) -> Void)? = nil
-//    
+    var delegate: (([Pose]) -> Void)? = nil
+
+    private lazy var model: PoseDetectorCaller = {
+//        if let filePath = Bundle.main.path(forResource: "openpifpaf-shufflenetv2k16.torchscript", ofType: "ptl") {
+        if let filePath = Bundle.main.path(forResource: "test", ofType: "ptl") {
+            print("loading model from", filePath)
+            return PoseDetectorCaller(modelAt: filePath)!
+        } else {
+            fatalError("Could not load model.")
+        }
+    }()
+//
 //    func singlePose(_ cif: MLMultiArray) -> Pose {
 //        var confidences = [Double](repeating: 0.0, count: cif.shape[1].intValue)
 //        var x = [Double](repeating: 0.0, count: cif.shape[1].intValue)
@@ -63,16 +73,12 @@ class PosePredictor {
     
     func predict(_ image: CGImage) {
         print("predicting...")
-//        guard let prediction = try? self.model.prediction(from: PredictorInput(image: image, size: self.size)) else {
-//            return
-//        }
-//
-//        let cif = prediction.featureValue(for: "cif_head")!.multiArrayValue
-//        let pose = self.singlePose(cif!)
-//        print(pose)
-//
-//        guard self.delegate != nil else { return }
-//        self.delegate!([pose])
+        let inferredPose = model.infer(image)
+        let pose = Pose(keypoints: inferredPose.keypoints, skeleton: [[]])
+        print(pose)
+
+        guard self.delegate != nil else { return }
+        self.delegate!([pose])
     }
 }
 
@@ -82,5 +88,11 @@ class PosePredictor {
 extension MLMultiArray {
     subscript(index: [Int]) -> Double {
         return self[index.map { NSNumber(value: $0) } ] as! Double
+    }
+}
+
+extension InferredPose {
+    var keypoints: [Keypoint] {
+        return (0..<xs.count).map { Keypoint(c: scores[$0].doubleValue, x: xs[$0].doubleValue, y: ys[$0].doubleValue) }
     }
 }

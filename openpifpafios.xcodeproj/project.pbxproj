@@ -8,21 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */; };
-		563AE9592BB2159700D6C76F /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9502BB2159600D6C76F /* utils.cpp */; };
-		563AE95A2BB2159700D6C76F /* module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9512BB2159600D6C76F /* module.cpp */; };
-		563AE95B2BB2159700D6C76F /* nms_keypoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9522BB2159600D6C76F /* nms_keypoints.cpp */; };
-		563AE95C2BB2159700D6C76F /* cif_hr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9532BB2159600D6C76F /* cif_hr.cpp */; };
-		563AE95D2BB2159700D6C76F /* cifdet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9542BB2159600D6C76F /* cifdet.cpp */; };
-		563AE95E2BB2159700D6C76F /* occupancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9552BB2159600D6C76F /* occupancy.cpp */; };
-		563AE95F2BB2159700D6C76F /* cifcaf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9562BB2159600D6C76F /* cifcaf.cpp */; };
-		563AE9602BB2159700D6C76F /* cif_seeds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9572BB2159600D6C76F /* cif_seeds.cpp */; };
-		563AE9612BB2159700D6C76F /* caf_scored.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9582BB2159600D6C76F /* caf_scored.cpp */; };
-		563AE9652BB21A3B00D6C76F /* openpifpaf.h in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9642BB21A3B00D6C76F /* openpifpaf.h */; };
-		563AE9692BB21E5900D6C76F /* Caller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9682BB21E5900D6C76F /* Caller.mm */; };
+		563AE9692BB21E5900D6C76F /* PoseDetectorCaller.mm in Sources */ = {isa = PBXBuildFile; fileRef = 563AE9682BB21E5900D6C76F /* PoseDetectorCaller.mm */; };
+		563AE96E2BB2401A00D6C76F /* InferredPose.m in Sources */ = {isa = PBXBuildFile; fileRef = 563AE96D2BB2401A00D6C76F /* InferredPose.m */; };
 		56B1FD942BACC3DB00FBE51D /* openpifpaf.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */; };
 		56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */; };
 		56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */; };
-		AECEC8469187E15A886903EB /* libPods-openpifpafios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDAF38B93125199A5427BB7 /* libPods-openpifpafios.a */; };
+		56D43D492BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */; };
+		56D43D4B2BB2562D00040387 /* test.ptl in Resources */ = {isa = PBXBuildFile; fileRef = 56D43D4A2BB2562D00040387 /* test.ptl */; };
 		B53A194F255DB733004C5B20 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A194E255DB733004C5B20 /* PoseView.swift */; };
 		B53A1954255DB799004C5B20 /* PoseAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53A1953255DB799004C5B20 /* PoseAnnotation.swift */; };
 		B5B4E5F625446B5E00B7BA85 /* openpifpafiosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E5F525446B5E00B7BA85 /* openpifpafiosApp.swift */; };
@@ -33,6 +25,7 @@
 		B5B4E61325446B5F00B7BA85 /* openpifpafiosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E61225446B5F00B7BA85 /* openpifpafiosUITests.swift */; };
 		B5B4E6522544DC0000B7BA85 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4E6512544DC0000B7BA85 /* CameraViewController.swift */; };
 		B5D2BF6D255FFDB000536A74 /* PosePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2BF6C255FFDB000536A74 /* PosePredictor.swift */; };
+		E731CF2CC0C95B41D490C412 /* Pods_openpifpafios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D536E433B35C1E9526825E7A /* Pods_openpifpafios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,31 +48,16 @@
 /* Begin PBXFileReference section */
 		253631C80064929DC4A110AE /* Pods-openpifpafios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openpifpafios.release.xcconfig"; path = "Target Support Files/Pods-openpifpafios/Pods-openpifpafios.release.xcconfig"; sourceTree = "<group>"; };
 		563AE91E2BB1D0A900D6C76F /* HeadMetas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadMetas.swift; sourceTree = "<group>"; };
-		563AE9452BB2159600D6C76F /* cifcaf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cifcaf.hpp; sourceTree = "<group>"; };
-		563AE9472BB2159600D6C76F /* caf_scored.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = caf_scored.hpp; sourceTree = "<group>"; };
-		563AE9482BB2159600D6C76F /* cif_seeds.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cif_seeds.hpp; sourceTree = "<group>"; };
-		563AE9492BB2159600D6C76F /* cif_hr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cif_hr.hpp; sourceTree = "<group>"; };
-		563AE94A2BB2159600D6C76F /* nms_keypoints.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = nms_keypoints.hpp; sourceTree = "<group>"; };
-		563AE94B2BB2159600D6C76F /* occupancy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = occupancy.hpp; sourceTree = "<group>"; };
-		563AE94C2BB2159600D6C76F /* cifdet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cifdet.hpp; sourceTree = "<group>"; };
-		563AE94D2BB2159600D6C76F /* openpifpaf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = openpifpaf.hpp; sourceTree = "<group>"; };
-		563AE94E2BB2159600D6C76F /* utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
-		563AE9502BB2159600D6C76F /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
-		563AE9512BB2159600D6C76F /* module.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = module.cpp; sourceTree = "<group>"; };
-		563AE9522BB2159600D6C76F /* nms_keypoints.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nms_keypoints.cpp; sourceTree = "<group>"; };
-		563AE9532BB2159600D6C76F /* cif_hr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cif_hr.cpp; sourceTree = "<group>"; };
-		563AE9542BB2159600D6C76F /* cifdet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cifdet.cpp; sourceTree = "<group>"; };
-		563AE9552BB2159600D6C76F /* occupancy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = occupancy.cpp; sourceTree = "<group>"; };
-		563AE9562BB2159600D6C76F /* cifcaf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cifcaf.cpp; sourceTree = "<group>"; };
-		563AE9572BB2159600D6C76F /* cif_seeds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cif_seeds.cpp; sourceTree = "<group>"; };
-		563AE9582BB2159600D6C76F /* caf_scored.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = caf_scored.cpp; sourceTree = "<group>"; };
-		563AE9642BB21A3B00D6C76F /* openpifpaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openpifpaf.h; sourceTree = "<group>"; };
 		563AE9662BB21D0900D6C76F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		563AE9672BB21E5900D6C76F /* Caller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Caller.h; sourceTree = "<group>"; };
-		563AE9682BB21E5900D6C76F /* Caller.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Caller.mm; sourceTree = "<group>"; };
+		563AE9672BB21E5900D6C76F /* PoseDetectorCaller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoseDetectorCaller.h; sourceTree = "<group>"; };
+		563AE9682BB21E5900D6C76F /* PoseDetectorCaller.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PoseDetectorCaller.mm; sourceTree = "<group>"; };
+		563AE96A2BB2318000D6C76F /* InferredPose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InferredPose.h; sourceTree = "<group>"; };
+		563AE96D2BB2401A00D6C76F /* InferredPose.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InferredPose.m; sourceTree = "<group>"; };
 		56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = openpifpaf.mlmodel; sourceTree = "<group>"; };
 		56B1FD952BAE15FC00FBE51D /* pillow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pillow-2.jpg"; sourceTree = "<group>"; };
 		56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = shufflenet.mlmodel; sourceTree = "<group>"; };
+		56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; name = "openpifpaf-shufflenetv2k16.torchscript.ptl"; path = "../../openpifpaf/openpifpaf-shufflenetv2k16.torchscript.ptl"; sourceTree = "<group>"; };
+		56D43D4A2BB2562D00040387 /* test.ptl */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.ptl; sourceTree = "<group>"; };
 		682ACB0B31F83AC11BDA7985 /* Pods-openpifpafios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openpifpafios.debug.xcconfig"; path = "Target Support Files/Pods-openpifpafios/Pods-openpifpafios.debug.xcconfig"; sourceTree = "<group>"; };
 		B53A194E255DB733004C5B20 /* PoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseView.swift; sourceTree = "<group>"; };
 		B53A1953255DB799004C5B20 /* PoseAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAnnotation.swift; sourceTree = "<group>"; };
@@ -97,7 +75,7 @@
 		B5B4E61425446B5F00B7BA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5B4E6512544DC0000B7BA85 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B5D2BF6C255FFDB000536A74 /* PosePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosePredictor.swift; sourceTree = "<group>"; };
-		FFDAF38B93125199A5427BB7 /* libPods-openpifpafios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openpifpafios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D536E433B35C1E9526825E7A /* Pods_openpifpafios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openpifpafios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECEC8469187E15A886903EB /* libPods-openpifpafios.a in Frameworks */,
+				E731CF2CC0C95B41D490C412 /* Pods_openpifpafios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,28 +115,11 @@
 		563AE9622BB2165700D6C76F /* openpifpaf */ = {
 			isa = PBXGroup;
 			children = (
-				563AE9452BB2159600D6C76F /* cifcaf.hpp */,
-				563AE9472BB2159600D6C76F /* caf_scored.hpp */,
-				563AE9482BB2159600D6C76F /* cif_seeds.hpp */,
-				563AE9492BB2159600D6C76F /* cif_hr.hpp */,
-				563AE94A2BB2159600D6C76F /* nms_keypoints.hpp */,
-				563AE94B2BB2159600D6C76F /* occupancy.hpp */,
-				563AE94C2BB2159600D6C76F /* cifdet.hpp */,
-				563AE9502BB2159600D6C76F /* utils.cpp */,
-				563AE9512BB2159600D6C76F /* module.cpp */,
-				563AE9522BB2159600D6C76F /* nms_keypoints.cpp */,
-				563AE9532BB2159600D6C76F /* cif_hr.cpp */,
-				563AE9542BB2159600D6C76F /* cifdet.cpp */,
-				563AE9552BB2159600D6C76F /* occupancy.cpp */,
-				563AE9562BB2159600D6C76F /* cifcaf.cpp */,
-				563AE9572BB2159600D6C76F /* cif_seeds.cpp */,
-				563AE9582BB2159600D6C76F /* caf_scored.cpp */,
-				563AE94D2BB2159600D6C76F /* openpifpaf.hpp */,
-				563AE94E2BB2159600D6C76F /* utils.hpp */,
-				563AE9642BB21A3B00D6C76F /* openpifpaf.h */,
 				563AE9662BB21D0900D6C76F /* BridgingHeader.h */,
-				563AE9672BB21E5900D6C76F /* Caller.h */,
-				563AE9682BB21E5900D6C76F /* Caller.mm */,
+				563AE9672BB21E5900D6C76F /* PoseDetectorCaller.h */,
+				563AE9682BB21E5900D6C76F /* PoseDetectorCaller.mm */,
+				563AE96A2BB2318000D6C76F /* InferredPose.h */,
+				563AE96D2BB2401A00D6C76F /* InferredPose.m */,
 			);
 			path = openpifpaf;
 			sourceTree = "<group>";
@@ -166,7 +127,7 @@
 		92416CA4B58FC492AB235877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FFDAF38B93125199A5427BB7 /* libPods-openpifpafios.a */,
+				D536E433B35C1E9526825E7A /* Pods_openpifpafios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,6 +167,8 @@
 		B5B4E5F425446B5E00B7BA85 /* openpifpafios */ = {
 			isa = PBXGroup;
 			children = (
+				56D43D4A2BB2562D00040387 /* test.ptl */,
+				56D43D482BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl */,
 				563AE91D2BB1D09600D6C76F /* CifCaf */,
 				56B1FD932BACC3DB00FBE51D /* openpifpaf.mlmodel */,
 				56B1FD972BAE1AF200FBE51D /* shufflenet.mlmodel */,
@@ -353,8 +316,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56D43D4B2BB2562D00040387 /* test.ptl in Resources */,
 				56B1FD962BAE15FC00FBE51D /* pillow-2.jpg in Resources */,
 				B5B4E5FD25446B5E00B7BA85 /* Preview Assets.xcassets in Resources */,
+				56D43D492BB2498000040387 /* openpifpaf-shufflenetv2k16.torchscript.ptl in Resources */,
 				B5B4E5FA25446B5E00B7BA85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,25 +370,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563AE95A2BB2159700D6C76F /* module.cpp in Sources */,
 				56B1FD942BACC3DB00FBE51D /* openpifpaf.mlmodel in Sources */,
-				563AE9592BB2159700D6C76F /* utils.cpp in Sources */,
 				563AE91F2BB1D0A900D6C76F /* HeadMetas.swift in Sources */,
+				563AE96E2BB2401A00D6C76F /* InferredPose.m in Sources */,
 				B5D2BF6D255FFDB000536A74 /* PosePredictor.swift in Sources */,
 				B5B4E5F825446B5E00B7BA85 /* ContentView.swift in Sources */,
-				563AE95D2BB2159700D6C76F /* cifdet.cpp in Sources */,
-				563AE95F2BB2159700D6C76F /* cifcaf.cpp in Sources */,
-				563AE9602BB2159700D6C76F /* cif_seeds.cpp in Sources */,
 				B5B4E5F625446B5E00B7BA85 /* openpifpafiosApp.swift in Sources */,
 				B53A1954255DB799004C5B20 /* PoseAnnotation.swift in Sources */,
-				563AE95E2BB2159700D6C76F /* occupancy.cpp in Sources */,
-				563AE9612BB2159700D6C76F /* caf_scored.cpp in Sources */,
 				B5B4E6522544DC0000B7BA85 /* CameraViewController.swift in Sources */,
-				563AE9692BB21E5900D6C76F /* Caller.mm in Sources */,
-				563AE95B2BB2159700D6C76F /* nms_keypoints.cpp in Sources */,
+				563AE9692BB21E5900D6C76F /* PoseDetectorCaller.mm in Sources */,
 				56B1FD982BAE1AF200FBE51D /* shufflenet.mlmodel in Sources */,
-				563AE95C2BB2159700D6C76F /* cif_hr.cpp in Sources */,
-				563AE9652BB21A3B00D6C76F /* openpifpaf.h in Sources */,
 				B53A194F255DB733004C5B20 /* PoseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

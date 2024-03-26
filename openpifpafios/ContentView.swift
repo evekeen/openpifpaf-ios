@@ -41,9 +41,9 @@ struct ContentView: View {
         .onAppear {
             print("onAppear")
             let image = UIImage(named: "pillow-2")
-//            posePredictor.delegate = {
-//                poses = $0
-//            }
+            posePredictor.delegate = {
+                poses = $0
+            }
             posePredictor.predict(image!.cgImage!)
         }
     }

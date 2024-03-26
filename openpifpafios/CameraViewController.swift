@@ -72,7 +72,7 @@ struct CameraViewControllerRepresentable: UIViewControllerRepresentable {
         let cvc = CameraViewController()
 //            .posePredictor(PosePredictor())  // TODO
         cvc.posePredictor = posePredictor
-//        posePredictor.delegate = self.poseUpdate
+        posePredictor.delegate = self.poseUpdate
         return cvc
     }
     

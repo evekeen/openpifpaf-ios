@@ -4,6 +4,7 @@ Pods/
 
 # data
 *.pt
+*.ptl
 *.mlmodel
 
 .DS_Store
